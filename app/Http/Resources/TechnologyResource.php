@@ -21,9 +21,9 @@ class TechnologyResource extends JsonResource
             'desc' => $this->desc,
             'desc_box' => $this->desc_box,
             'extra_desc_box' => $this->extra_desc_box,
-            'images'=> ImageResource::collection($this->images),
-            'created_at' => $this->created_at->toDateTimeString(),
-            'updated_at' => $this->updated_at->toDateTimeString(),
+            'images' => $this->images ? ImageResource::collection($this->images) : null,
+            'created_at' => $this->created_at ? $this->created_at->toDateTimeString() : null,
+            'updated_at' => $this->updated_at ? $this->updated_at->toDateTimeString() : null,
         ];
     }
 }

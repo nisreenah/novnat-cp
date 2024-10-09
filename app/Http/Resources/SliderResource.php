@@ -24,8 +24,8 @@ class SliderResource extends JsonResource
             'youtube_video_title' => $this->youtube_video_title,
             'about_youtube_video' => $this->about_youtube_video,
             'cover_youtube_image' => asset('upload/sliders/' . $this->cover_youtube_image),
-            'created_at' => $this->created_at->toDateTimeString(),
-            'updated_at' => $this->updated_at->toDateTimeString(),
+            'created_at' => $this->created_at ? $this->created_at->toDateTimeString() : null,
+            'updated_at' => $this->updated_at ? $this->updated_at->toDateTimeString() : null,
         ];
     }
 }
