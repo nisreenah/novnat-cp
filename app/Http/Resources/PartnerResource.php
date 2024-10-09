@@ -17,8 +17,8 @@ class PartnerResource extends JsonResource
         return [
             'id' => $this->id,
             'image' => asset('upload/partners/' . $this->image),
-            'created_at' => $this->created_at->toDateTimeString(),
-            'updated_at' => $this->updated_at->toDateTimeString(),
+            'created_at' => $this->created_at ? $this->created_at->toDateTimeString() : null,
+            'updated_at' => $this->updated_at ? $this->updated_at->toDateTimeString() : null,
         ];
     }
 }

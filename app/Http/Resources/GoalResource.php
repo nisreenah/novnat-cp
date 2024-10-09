@@ -19,8 +19,8 @@ class GoalResource extends JsonResource
             'title' => $this->title,
             'image' => asset('upload/goals/' . $this->image),
             'URL' => $this->URL,
-            'created_at' => $this->created_at->toDateTimeString(),
-            'updated_at' => $this->updated_at->toDateTimeString(),
+            'created_at' => $this->created_at ? $this->created_at->toDateTimeString() : null,
+            'updated_at' => $this->updated_at ? $this->updated_at->toDateTimeString() : null,
         ];
     }
 }
