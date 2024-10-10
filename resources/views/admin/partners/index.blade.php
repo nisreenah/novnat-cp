@@ -29,7 +29,7 @@
                                 <tr>
                                     <td>{{ $partner->id }}</td>
                                     <td>
-                                        <img width="75px" src="{{ asset('upload/partners/'. $partner->image ) }}">
+                                        <img width="75px" src="{{ Storage::url('upload/partners/'. $partner->image ) }}">
                                     </td>
                                     <td>{{ $partner->updated_at }}</td>
                                     <td>

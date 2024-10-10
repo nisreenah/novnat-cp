@@ -35,7 +35,7 @@
 
                                 <div class="form-group">
                                     <label for="image">Current Main Image</label><br/>
-                                    <img width="530px" src="{{ asset('upload/technologies/'. $technology->image ) }}"/>
+                                    <img width="530px" src="{{ Storage::url('upload/technologies/'. $technology->image ) }}"/>
                                 </div>
 
                                 <div class="form-group">
@@ -125,7 +125,7 @@
                                 <div class="card card-post card-round">
                                     <img class="card-img-top img-fluid img-responsive"
                                          style="width:100%; height: 230px;"
-                                         src="{{ asset('upload/albums/'. $image->image_path) }}"
+                                         src="{{ Storage::url('upload/albums/'. $image->image_path) }}"
                                          alt="Card image cap"/>
                                     <div class="card-body">
                                         <!-- Button trigger modal -->

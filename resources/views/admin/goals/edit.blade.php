@@ -38,7 +38,7 @@
                             <div class="col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label for="image">Current Image</label><br/>
-                                    <img src="{{ asset('upload/goals/'. $goal->image ) }}"/>
+                                    <img src="{{ Storage::url('upload/goals/'. $goal->image ) }}"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="image">Image</label>

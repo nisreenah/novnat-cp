@@ -50,12 +50,12 @@
 
                                             @if(in_array(strtolower($extension), $imageExtensions))
                                                 <!-- Display image -->
-                                                <img src="{{ asset('upload/sliders/'. $slider->media ) }}"
+                                                <img src="{{ Storage::url('upload/sliders/'. $slider->media ) }}"
                                                      alt="Uploaded Image" width="300">
                                             @elseif(in_array(strtolower($extension), $videoExtensions))
                                                 <!-- Display video -->
                                                 <video width="320" height="240" controls>
-                                                    <source src="{{ asset('upload/sliders/'. $slider->media ) }}"
+                                                    <source src="{{ Storage::url('upload/sliders/'. $slider->media ) }}"
                                                             type="video/{{ $extension }}">
                                                     Your browser does not support the video tag.
                                                 </video>
@@ -135,7 +135,7 @@
                                 <div class="form-group">
                                     <label for="cover_youtube_image">Current Cover Youtube Image</label>
                                     <img width="530px"
-                                         src="{{ asset('upload/sliders/'. $slider->cover_youtube_image ) }}"/>
+                                         src="{{ Storage::url('upload/sliders/'. $slider->cover_youtube_image ) }}"/>
                                 </div>
 
                                 <div class="form-group">

@@ -29,7 +29,7 @@
 
                                 <div class="form-group">
                                     <label for="image">Current Image</label><br/>
-                                    <img src="{{ asset('upload/partners/'. $partner->image ) }}"/>
+                                    <img src="{{ Storage::url('upload/partners/'. $partner->image ) }}"/>
                                 </div>
                             </div>
                         </div>

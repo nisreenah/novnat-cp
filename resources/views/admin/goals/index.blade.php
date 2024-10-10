@@ -30,7 +30,7 @@
                             @foreach($goals as $goal)
                                 <tr>
                                     <td>{{ $goal->id }}</td>
-                                    <td><img width="75px" src="{{ asset('upload/goals/'. $goal->image ) }}"></td>
+                                    <td><img width="75px" src="{{ Storage::url('upload/goals/'. $goal->image ) }}"></td>
                                     <td>{{ $goal->title }}</td>
                                     <td>{{ $goal->URL }}</td>
                                     <td>{{ $goal->updated_at }}</td>

@@ -32,7 +32,7 @@
                                 <tr>
                                     <td>{{ $team->id }}</td>
                                     <td>
-                                        <img width="75px" src="{{ asset('upload/teams/'. $team->image ) }}">
+                                        <img width="75px" src="{{ Storage::url('upload/teams/'. $team->image ) }}">
                                     </td>
                                     <td>
                                         <span class="badge badge-{{ $team->role == 'member' ? 'primary' : 'warning' }}">

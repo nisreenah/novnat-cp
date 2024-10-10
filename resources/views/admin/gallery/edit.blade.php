@@ -42,7 +42,7 @@
                             <div class="col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label for="image">Current Image</label><br/>
-                                    <img width="530px" src="{{ asset('upload/galleries/'. $gallery->image ) }}"/>
+                                    <img width="530px" src="{{ Storage::url('upload/galleries/'. $gallery->image ) }}"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="image">Upload New Image</label>
@@ -107,7 +107,7 @@
                                 <div class="card card-post card-round">
                                     <img class="card-img-top img-fluid img-responsive"
                                          style="width:100%; height: 230px;"
-                                         src="{{ asset('upload/albums/'. $image->image_path) }}"
+                                         src="{{ Storage::url('upload/albums/'. $image->image_path) }}"
                                          alt="Card image cap"/>
                                     <div class="card-body">
                                         <!-- Button trigger modal -->
