@@ -23,6 +23,7 @@ class UpdatePartnerRequest extends FormRequest
     {
         return [
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
+            'URL' => 'required|url',
         ];
     }
 }

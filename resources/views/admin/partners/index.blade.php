@@ -19,6 +19,7 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>URL</th>
                                 <th>Image</th>
                                 <th>Updated At</th>
                                 <th style="width: 10%">Action</th>
@@ -28,6 +29,7 @@
                             @foreach($partners as $partner)
                                 <tr>
                                     <td>{{ $partner->id }}</td>
+                                    <td>{{ $partner->URL }}</td>
                                     <td>
                                         <img width="75px" src="{{ Storage::url('upload/partners/'. $partner->image ) }}">
                                     </td>
