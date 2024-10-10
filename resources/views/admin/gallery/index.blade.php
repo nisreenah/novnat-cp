@@ -31,7 +31,7 @@
                                     <td>{{ $gallery->id }}</td>
                                     <td>{{ $gallery->title }}</td>
                                     <td>
-                                        <img width="75px" src="{{ asset('upload/galleries/'. $gallery->image ) }}">
+                                        <img width="75px" src="{{ Storage::url('upload/galleries/'. $gallery->image ) }}">
                                     </td>
                                     <td>{{ $gallery->updated_at }}</td>
                                     <td>

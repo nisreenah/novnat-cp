@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="image">Current Image</label><br/>
-                                    <img src="{{ asset('upload/teams/'. $team->image ) }}"/>
+                                    <img src="{{ Storage::url('upload/teams/'. $team->image ) }}"/>
                                 </div>
                             </div>
                         </div>

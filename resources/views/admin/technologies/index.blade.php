@@ -31,7 +31,7 @@
                                     <td>{{ $technology->id }}</td>
                                     <td>{{ $technology->title }}</td>
                                     <td>
-                                        <img width="75px" src="{{ asset('upload/technologies/'. $technology->image ) }}">
+                                        <img width="75px" src="{{ Storage::url('upload/technologies/'. $technology->image ) }}">
                                     </td>
                                     <td>{{ $technology->updated_at }}</td>
                                     <td>

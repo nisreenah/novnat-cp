@@ -31,7 +31,7 @@
                                 <tr>
                                     <td>{{ $slider->id }}</td>
                                     <td>
-                                        <img width="75px" src="{{ asset('upload/sliders/'. $slider->media ) }}">
+                                        <img width="75px" src="{{ Storage::url('upload/sliders/'. $slider->media ) }}">
                                     </td>
                                     <td>{{ $slider->title }}</td>
                                     <td>{{ $slider->updated_at }}</td>
