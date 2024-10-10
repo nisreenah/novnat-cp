@@ -22,6 +22,12 @@
                         <div class="row">
                             <div class="col-md-6 col-lg-8">
                                 <div class="form-group">
+                                    <label for="URL">URL</label>
+                                    <input type="url" name="URL" class="form-control" id="URL"
+                                           placeholder="https://www.example.com/" value="{{ old('URL') }}"/>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="image">Partner Image</label>
                                     <input type="file" name="image" class="form-control" id="image"/>
                                 </div>

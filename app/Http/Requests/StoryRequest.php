@@ -22,7 +22,7 @@ class StoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'year' => 'required|digits:4|integer|min:1900|max:' . date('Y'),
+            'year' => 'required|digits:4|integer',
             'title' => 'required',
             'description' => 'required',
         ];

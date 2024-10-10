@@ -93,12 +93,12 @@
                 </li>
 
                 <li class="nav-item">
-                    <a data-bs-toggle="collapse" href="#features">
+                    <a data-bs-toggle="collapse" href="#story">
                         <i class="fa-solid fa-list-ol"></i>
                         <p>Stories</p>
                         <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="features">
+                    <div class="collapse" id="story">
                         <ul class="nav nav-collapse">
                             <li>
                                 <a href="{{ route('stories.index') }}">
