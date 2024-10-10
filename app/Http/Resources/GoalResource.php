@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class GoalResource extends JsonResource
 {
@@ -17,7 +18,7 @@ class GoalResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'image' => asset('upload/goals/' . $this->image),
+            'image' => Storage::url('upload/goals/' . $this->image),
             'URL' => $this->URL,
             'created_at' => $this->created_at ? $this->created_at->toDateTimeString() : null,
             'updated_at' => $this->updated_at ? $this->updated_at->toDateTimeString() : null,

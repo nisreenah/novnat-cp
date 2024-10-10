@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class ImageResource extends JsonResource
 {
@@ -16,7 +17,7 @@ class ImageResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'image_path' => asset('upload/albums/' . $this->image_path),
+            'image_path' => Storage::url('upload/albums/' . $this->image_path),
             'created_at' => $this->created_at ? $this->created_at->toDateTimeString() : null,
             'updated_at' => $this->updated_at ? $this->updated_at->toDateTimeString() : null,
         ];
