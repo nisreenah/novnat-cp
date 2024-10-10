@@ -68,7 +68,7 @@ class TeamController extends Controller
             $this->deleteImage($team->image, 'teams');
             $inputs['image'] = $this->storeImage($request->file('image'), 'teams');
         }
-        $team->fill($inputs);
+        $team->update($inputs);
         return redirect()->route('teams.index')->with($this->notification('Team member updated successfully.'));
     }
 
