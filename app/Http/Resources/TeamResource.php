@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class TeamResource extends JsonResource
 {
@@ -19,7 +20,7 @@ class TeamResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'role' => $this->role,
-            'image' => asset('upload/teams/' . $this->image),
+            'image' => Storage::url('upload/teams/' . $this->image),
             'position' => $this->position,
             'linkedin_url' => $this->linkedin_url,
             'created_at' => $this->created_at ? $this->created_at->toDateTimeString() : null,

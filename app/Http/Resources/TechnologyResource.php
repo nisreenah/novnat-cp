@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class TechnologyResource extends JsonResource
 {
@@ -17,7 +18,7 @@ class TechnologyResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'image' => asset('upload/technologies/' . $this->image),
+            'image' => Storage::url('upload/technologies/' . $this->image),
             'desc' => $this->desc,
             'desc_box' => $this->desc_box,
             'extra_desc_box' => $this->extra_desc_box,

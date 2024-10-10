@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class PartnerResource extends JsonResource
 {
@@ -16,7 +17,7 @@ class PartnerResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'image' => asset('upload/partners/' . $this->image),
+            'image' => Storage::url('upload/partners/' . $this->image),
             'created_at' => $this->created_at ? $this->created_at->toDateTimeString() : null,
             'updated_at' => $this->updated_at ? $this->updated_at->toDateTimeString() : null,
         ];
