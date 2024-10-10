@@ -24,13 +24,9 @@
                             <div class="col-md-6 col-lg-6">
                                 <div class="form-group">
                                     <label for="role">Member Role</label>
-                                    <select name="role" class="single-select form-control">
-                                        <option value="member"{{ $team->role == 'member' ? 'selected' : '' }} >
-                                            Main Member
-                                        </option>
-                                        <option value="adviser" {{ $team->role == 'adviser' ? 'selected' : '' }}>
-                                            Adviser
-                                        </option>
+                                    <select id="role" name="role" class="single-select form-control">
+                                        <option value="member" {{ old('role', $team->role) == 'member' ? 'selected' : '' }}>Main Member</option>
+                                        <option value="adviser" {{ old('role', $team->role) == 'adviser' ? 'selected' : '' }}>Adviser</option>
                                     </select>
                                 </div>
 
@@ -62,6 +58,24 @@
                                            placeholder="https://www.linkedin.com/"
                                            value="{{ old('linkedin_url', $team->linkedin_url) }}"/>
                                 </div>
+
+                                <!-- Hidden Fields for Advisers -->
+                                <div id="adviser_fields" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="bio">Bio</label>
+                                        <textarea id="bio" name="bio" class="form-control">
+                                            {{ old('bio', $team->bio) }}
+                                        </textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="provide">Provide Us</label>
+                                        <textarea id="provide" name="provide" class="form-control">
+                                             {{ old('provide', $team->provide) }}
+                                        </textarea>
+                                    </div>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="image">Current Image</label><br/>
                                     <img src="{{ Storage::url('upload/teams/'. $team->image ) }}"/>
@@ -77,4 +91,32 @@
             </div>
         </div>
     </div>
+@endsection
+
+
+
+@section('scripts')
+    <script>
+        // Function to toggle the visibility of the adviser fields based on the selected role
+        function toggleAdviserFields() {
+            var role = document.getElementById('role').value;
+            var adviserFields = document.getElementById('adviser_fields');
+
+            if (role === 'adviser') {
+                adviserFields.style.display = 'block';  // Show fields if role is 'adviser'
+            } else {
+                adviserFields.style.display = 'none';  // Hide fields for other roles
+            }
+        }
+
+        // Attach change event listener to the role select box
+        document.getElementById('role').addEventListener('change', function () {
+            toggleAdviserFields();  // Trigger when the role is changed
+        });
+
+        // Trigger the function on page load to check the initial selection
+        document.addEventListener('DOMContentLoaded', function () {
+            toggleAdviserFields();  // Trigger on page load
+        });
+    </script>
 @endsection
