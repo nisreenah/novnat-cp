@@ -42,11 +42,30 @@
                                            placeholder="Enter member Position"/>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="bio">Bio</label>
+                                    <textarea rows="5" id="bio" name="bio" class="form-control">
+                                        {{ old('bio', $team->bio) }}
+                                    </textarea>
+                                </div>
 
-
+                                <!-- Hidden Field for Advisers -->
+                                <div id="adviser_fields" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="provide">Provide Us</label>
+                                        <textarea rows="5" id="provide" name="provide" class="form-control">
+                                             {{ old('provide', $team->provide) }}
+                                        </textarea>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="col-md-6 col-lg-6">
+                                <div class="form-group">
+                                    <label for="image">Current Image</label><br/>
+                                    <img width="540" src="{{ Storage::url('upload/teams/'. $team->image ) }}"/>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="image">Upload New Member Image</label>
                                     <input type="file" name="image" class="form-control" id="image"/>
@@ -59,27 +78,6 @@
                                            value="{{ old('linkedin_url', $team->linkedin_url) }}"/>
                                 </div>
 
-                                <!-- Hidden Fields for Advisers -->
-                                <div id="adviser_fields" style="display: none;">
-                                    <div class="form-group">
-                                        <label for="bio">Bio</label>
-                                        <textarea id="bio" name="bio" class="form-control">
-                                            {{ old('bio', $team->bio) }}
-                                        </textarea>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="provide">Provide Us</label>
-                                        <textarea id="provide" name="provide" class="form-control">
-                                             {{ old('provide', $team->provide) }}
-                                        </textarea>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="image">Current Image</label><br/>
-                                    <img src="{{ Storage::url('upload/teams/'. $team->image ) }}"/>
-                                </div>
                             </div>
                         </div>
                     </div>
