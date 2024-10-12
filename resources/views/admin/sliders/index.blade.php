@@ -33,6 +33,36 @@
                                     <td>
                                         <img width="75px" src="{{ Storage::url('upload/sliders/'. $slider->media ) }}">
                                     </td>
+                                    <td>
+                                        @if($slider->media)
+                                            @php
+                                                // Get the file extension of the uploaded media
+                                                $extension = pathinfo($slider->media, PATHINFO_EXTENSION);
+
+                                                // Define image and video extensions
+                                                $imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
+                                                $videoExtensions = ['mp4', 'avi', 'mov', 'webm'];
+                                            @endphp
+
+                                            @if(in_array(strtolower($extension), $imageExtensions))
+                                                <!-- Display image -->
+                                                <img src="{{ Storage::url('upload/sliders/'. $slider->media ) }}"
+                                                     alt="Uploaded Image" width="75px">
+
+                                            @elseif(in_array(strtolower($extension), $videoExtensions))
+                                                <!-- Display video -->
+                                                <video width="120" controls>
+                                                    <source src="{{ Storage::url('upload/sliders/'. $slider->media ) }}"
+                                                            type="video/{{ $extension }}">
+                                                    Your browser does not support the video tag.
+                                                </video>
+                                            @else
+                                                <p>Unsupported media type.</p>
+                                            @endif
+                                        @else
+                                            <p>No media uploaded.</p>
+                                        @endif
+                                    </td>
                                     <td>{{ $slider->title }}</td>
                                     <td>{{ $slider->updated_at }}</td>
                                     <td>
