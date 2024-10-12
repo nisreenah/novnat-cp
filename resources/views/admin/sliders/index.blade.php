@@ -31,9 +31,6 @@
                                 <tr>
                                     <td>{{ $slider->id }}</td>
                                     <td>
-                                        <img width="75px" src="{{ Storage::url('upload/sliders/'. $slider->media ) }}">
-                                    </td>
-                                    <td>
                                         @if($slider->media)
                                             @php
                                                 // Get the file extension of the uploaded media
