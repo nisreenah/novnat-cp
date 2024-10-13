@@ -39,6 +39,13 @@
                                            value="{{ old('position') }}" placeholder="Enter member Position"/>
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="bio">Bio</label>
+                                    <textarea rows="5" id="bio" name="bio" class="form-control">
+                                        {{ old('bio') }}
+                                    </textarea>
+                                </div>
+
                             </div>
 
                             <div class="col-md-6 col-lg-6">
@@ -48,22 +55,19 @@
                                            placeholder="https://www.linkedin.com/" value="{{ old('linkedin_url') }}"/>
                                 </div>
 
-                                <!-- Hidden Fields for Advisers -->
-                                <div id="adviser_fields" style="display: none;">
-                                    <div class="form-group">
-                                        <label for="bio">Bio</label>
-                                        <textarea id="bio" name="bio" class="form-control"></textarea>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="provide">Provide Us</label>
-                                        <textarea id="provide" name="provide" class="form-control"></textarea>
-                                    </div>
-                                </div>
-
                                 <div class="form-group">
                                     <label for="image">Member Image</label>
                                     <input type="file" name="image" class="form-control" id="image"/>
+                                </div>
+
+                                <!-- Hidden Field for Advisers -->
+                                <div id="adviser_fields" style="display: none;">
+                                    <div class="form-group">
+                                        <label for="provide">Provide Us</label>
+                                        <textarea rows="5" id="provide" name="provide" class="form-control">
+                                             {{ old('provide') }}
+                                        </textarea>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -28,11 +28,11 @@ class StoreTeamRequest extends FormRequest
             'role' => 'required|in:member,adviser',
             'position' => 'required|string',
             'image' => 'required',
+            'bio' => 'required',
         ];
 
         // Conditionally add validation rules if role is 'adviser'
         if ($this->input('role') == 'adviser') {
-            $rules['bio'] = 'required';
             $rules['provide'] = 'required';
         }
 

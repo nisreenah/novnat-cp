@@ -26,11 +26,11 @@ class UpdateTeamRequest extends FormRequest
             'linkedin_url' => 'required|string',
             'role' => 'required|in:member,adviser',
             'position' => 'required|string',
+            'bio' => 'required',
         ];
 
         // Conditionally add validation rules if role is 'adviser'
         if ($this->input('role') == 'adviser') {
-            $rules['bio'] = 'required';
             $rules['provide'] = 'required';
         }
 
