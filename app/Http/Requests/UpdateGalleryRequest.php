@@ -24,7 +24,6 @@ class UpdateGalleryRequest extends FormRequest
         return [
             'title' => 'required',
             'desc' => 'required',
-            'album' => 'required'
         ];
     }
 }
