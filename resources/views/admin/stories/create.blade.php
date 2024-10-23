@@ -38,7 +38,7 @@
                                 <div class="form-group">
                                     <label for="description">Description</label>
                                     <textarea type="text" name="description" class="form-control"
-                                              rows="3" id="elm1">{{ old('description') }}</textarea>
+                                              rows="3">{{ old('description') }}</textarea>
                                 </div>
 
                             </div>
@@ -55,13 +55,6 @@
 @endsection
 
 @section('scripts')
-
-    <!--tinymce js-->
-    <script src="{{ asset('assets/js/plugin/tinymce/tinymce.min.js') }}"></script>
-
-    <!-- init js -->
-    <script src="{{ asset('assets/js/form-editor.init.js') }}"></script>
-
     <script>
         document.getElementById('year').addEventListener('input', function (e) {
             let value = e.target.value;

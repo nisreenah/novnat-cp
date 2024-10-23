@@ -18,7 +18,7 @@ class SliderResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'media' => Storage::url('upload/sliders/' . $this->image),
+            'media' => Storage::url('upload/sliders/' . $this->media),
             'desc' => $this->desc,
             'extra_desc' => $this->extra_desc,
             'youtube_video_url' => $this->youtube_video_url,
