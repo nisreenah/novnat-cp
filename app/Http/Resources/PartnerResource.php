@@ -18,6 +18,7 @@ class PartnerResource extends JsonResource
         return [
             'id' => $this->id,
             'image' => Storage::url('upload/partners/' . $this->image),
+            'URL' => $this->URL,
             'created_at' => $this->created_at ? $this->created_at->toDateTimeString() : null,
             'updated_at' => $this->updated_at ? $this->updated_at->toDateTimeString() : null,
         ];

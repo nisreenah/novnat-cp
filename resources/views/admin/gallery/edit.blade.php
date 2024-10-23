@@ -35,7 +35,7 @@
                                 <div class="form-group">
                                     <label for="desc">Description</label>
                                     <textarea type="text" name="desc" class="form-control"
-                                              rows="3" id="elm1">{{ old('desc', $gallery->desc) }}</textarea>
+                                              rows="10">{{ old('desc', $gallery->desc) }}</textarea>
                                 </div>
                             </div>
 
@@ -191,11 +191,5 @@
             formSelector: '#my-form', // form selector
         });
     </script>
-
-    <!--tinymce js-->
-    <script src="{{ asset('assets/js/plugin/tinymce/tinymce.min.js') }}"></script>
-
-    <!-- init js -->
-    <script src="{{ asset('assets/js/form-editor.init.js') }}"></script>
 @endsection
 
