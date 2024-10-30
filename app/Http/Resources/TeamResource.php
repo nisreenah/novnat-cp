@@ -15,16 +15,22 @@ class TeamResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        //return parent::toArray($request);
-        return [
+        $arr = [
             'id' => $this->id,
             'name' => $this->name,
             'role' => $this->role,
             'image' => Storage::url('upload/teams/' . $this->image),
             'position' => $this->position,
-            'linkedin_url' => $this->linkedin_url,
-            'created_at' => $this->created_at ? $this->created_at->toDateTimeString() : null,
-            'updated_at' => $this->updated_at ? $this->updated_at->toDateTimeString() : null,
+            'bio' => $this->bio,
         ];
+
+        if ($this->role == 'adviser')
+            $arr['provide'] = $this->provide;
+
+        $arr['linkedin_url'] = $this->linkedin_url;
+        $arr['created_at'] = $this->created_at ? $this->created_at->toDateTimeString() : null;
+        $arr['updated_at'] = $this->updated_at ? $this->updated_at->toDateTimeString() : null;
+
+        return $arr;
     }
 }
